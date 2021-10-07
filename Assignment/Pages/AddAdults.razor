@@ -1,0 +1,86 @@
+﻿@page "/AddAdults"
+@attribute [Authorize(Policy = "MustBeAdmin")]
+@using Assignment.Model
+@using Assignment.Data
+@using Microsoft.CSharp.RuntimeBinder
+@using Microsoft.Extensions.Options
+@using System.Net.Security
+@inject NavigationManager NavigationManager
+@inject IFileContext FileContext
+
+<h2>Add Adults</h2>
+
+<EditForm Model="@newAdultItem" OnValidSubmit="@AddAdult">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="form-group">
+        First Name: <br/>
+        <InputText rows="1" @bind-Value="newAdultItem.FirstName"/>
+    </div>
+    <div class="form-group">
+        Last Name: <br/>
+        <InputText rows="1" @bind-Value="newAdultItem.LastName"/>
+    </div>
+    <div class="form-group">
+        Choose sex: <br/>
+        <select class="form-group selectpicker" @onchange="(arg) => AddSex(arg)" style="width: 70px">
+            <option>M</option>
+            <option>F</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        Itroduce your age: <br/>
+        <input type="number" rows="1" @bind="newAdultItem.Age" style="width: 70px"/>
+    </div>
+    @* <div class="form-group"> *@
+        @* Introduce your place of work: <br/> *@
+        @* <InputText rows="1" @bind-value="newAdultItem.Job.JobTitle"/> *@
+    @* </div> *@
+    @* <div class="form-group"> *@
+            @* Introduce your Salary: <br/> *@
+            @* <input type="number" rows="1" @bind="newAdultItem.Job.Salary"/> *@
+        @* </div> *@
+    <div class="form-group">
+        Intoduce the color of your hair: <br/>
+        <InputText rows="1" @bind-Value="newAdultItem.HairColor"/>
+    </div>
+    <div class="form-group">
+        Intoduce the color of your eyes: <br/>
+        <InputText rows="1" @bind-Value="newAdultItem.EyeColor"/>
+    </div>
+    <div class="form-group">
+        Introduce your weight: 
+        <input type="number" @bind="newAdultItem.Weight" style="width: 70px"/>
+        and height: 
+        <input type="number" @bind="newAdultItem.Height" style="width: 70px"/>
+    </div>
+    <p class="actions">
+        <button class="btn btn-outline-dark" type="submit">Add</button>
+    </p>
+</EditForm>
+
+@code
+{
+     //private Adult newAdultItem = new Adult();
+     // private Job job = new Job();
+
+     private Adult newAdultItem = new Adult
+     {
+         Job = new Job()
+     }; 
+    
+    private void AddAdult()
+    {
+        // Adult adult = (Adult)newAdultItem;
+        // adult.Job = job;
+        
+        FileContext.AddAdults(newAdultItem);
+        NavigationManager.NavigateTo("/Adults");
+    }
+    
+    private void AddSex(ChangeEventArgs arg)
+    {
+        newAdultItem.Sex = arg.Value.ToString();
+    }
+}

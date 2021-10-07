@@ -1,0 +1,112 @@
+﻿@page "/Adults"
+@using Assignment.Data
+@using Assignment.Model
+@inject IFileContext FileContext
+
+<h1>Adults</h1>
+<p>
+    Search adult by ID:
+    <input type="number" @oninput="@((arg) => FilterById(arg))" style="width: 50px"/>
+</p>
+<p>
+    Search adult by name:
+    <input type="text" @oninput="@((arg) => FilterByFirstName(arg))"/>
+</p>
+@if (adults == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else if (!adults.Any())
+{
+    <p>
+        <em>No adults exist. You should add some.</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Job</th>
+            @* <th>Salary</th> *@
+            @* <th>Remove</th> *@
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in filteredAdults)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Age</td>
+                <td>@item.Sex</td>
+                @* <td>@item.Job.JobTitle</td> *@
+                @* <td>@item.Job.Salary</td> *@
+                <td>
+                    <button @onclick="@(() => RemoveAdult(item.Id))">
+                        <i class="oi oi-trash" style="color: red"/>
+                    </button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code
+{
+    private IList<Adult> filteredAdults;
+    private IList<Adult> adults;
+
+    private int? filterById;
+    private string? filterByFirstName;
+    
+    private void FilterById(ChangeEventArgs arg)
+    {
+        filterById = null;
+        try
+        {
+            filterById = int.Parse(arg.Value.ToString());
+        }
+        catch (Exception e)
+        {
+            
+        }
+        filteredAdults = adults.Where(a => (filterById != null && a.Id == filterById || filterById == null)).ToList();
+    }
+    
+    private void RemoveAdult(int Id)
+    {
+        Adult adultToRemove = adults.First(a => a.Id == Id);
+        FileContext.RevomeAdults(Id);
+        adults.Remove(adultToRemove);
+    }
+    
+    private void FilterByFirstName(ChangeEventArgs arg)
+    {
+        filterByFirstName = null;
+        try
+        {
+            filterByFirstName = arg.Value.ToString();
+        }
+        catch (Exception e)
+        {
+
+        }
+        filteredAdults = adults.Where(a => (!filterByFirstName.Equals(null) && a.FirstName.Equals(filterByFirstName) || filterByFirstName.Equals(null))).ToList();
+    }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        adults = FileContext.GetAdults();
+        filteredAdults = adults;
+    }
+}
