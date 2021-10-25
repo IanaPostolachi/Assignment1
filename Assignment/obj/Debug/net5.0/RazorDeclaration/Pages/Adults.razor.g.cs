@@ -127,11 +127,18 @@ using Assignment.Model;
         filteredAdults = adults.Where(a => (filterById != null && a.Id == filterById || filterById == null)).ToList();
     }
     
-    private void RemoveAdult(int Id)
+    private async Task RemoveAdult(int Id)
     {
         Adult adultToRemove = adults.First(a => a.Id == Id);
-        FileContext.RevomeAdults(Id);
-        adults.Remove(adultToRemove);
+        try
+        {
+            await FileContext.RevomeAdultsAsync(Id);
+            adults.Remove(adultToRemove);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
     
     private void FilterByFirstName(ChangeEventArgs arg)
@@ -150,8 +157,15 @@ using Assignment.Model;
     
     protected override async Task OnInitializedAsync()
     {
-        adults = FileContext.GetAdults();
-        filteredAdults = adults;
+        try
+        {
+            adults = await FileContext.GetAdultsAsync();
+            filteredAdults = adults;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
 #line default

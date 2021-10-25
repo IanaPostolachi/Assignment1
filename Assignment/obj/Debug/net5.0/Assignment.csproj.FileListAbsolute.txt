@@ -54,7 +54,7 @@ C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\r
 C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Assignment.pdb
 C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Assignment.genruntimeconfig.cache
 C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Assignment.csproj.CopyComplete
-C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\AddAdults.razor.g.cs
-C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Razor\Pages\AddAdults.razor.g.cs
 C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\RazorDeclaration\Pages\AddAdultsAsync.razor.g.cs
+C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\obj\Debug\net5.0\Razor\Pages\AddAdultsAsync.razor.g.cs

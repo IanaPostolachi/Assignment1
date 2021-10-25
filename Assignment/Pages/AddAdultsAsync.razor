@@ -75,7 +75,7 @@
         // Adult adult = (Adult)newAdultItem;
         // adult.Job = job;
         
-        FileContext.AddAdults(newAdultItem);
+        FileContext.AddAdultsAsync(newAdultItem);
         NavigationManager.NavigateTo("/Adults");
     }
     

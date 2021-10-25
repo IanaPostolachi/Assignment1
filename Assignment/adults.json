@@ -283,5 +283,50 @@
     "Weight": 60,
     "Height": 170,
     "Sex": "M"
+  },
+  {
+    "Job": {
+      "JobTitle": null,
+      "Salary": 0
+    },
+    "Id": 20,
+    "FirstName": "Lone",
+    "LastName": "Jensen",
+    "HairColor": "Blonde",
+    "EyeColor": "Blue",
+    "Age": 34,
+    "Weight": 55,
+    "Height": 166,
+    "Sex": "F"
+  },
+  {
+    "Job": {
+      "JobTitle": null,
+      "Salary": 0
+    },
+    "Id": 21,
+    "FirstName": "Jens",
+    "LastName": "Jensen",
+    "HairColor": "Brown",
+    "EyeColor": "Brown",
+    "Age": 33,
+    "Weight": 68,
+    "Height": 178,
+    "Sex": "Other"
+  },
+  {
+    "Job": {
+      "JobTitle": null,
+      "Salary": 0
+    },
+    "Id": 22,
+    "FirstName": "Anette",
+    "LastName": "Carstensen",
+    "HairColor": "Blonde",
+    "EyeColor": "Blue",
+    "Age": 45,
+    "Weight": 60,
+    "Height": 165,
+    "Sex": "F"
   }
 ]

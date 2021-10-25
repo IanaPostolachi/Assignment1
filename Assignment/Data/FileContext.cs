@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Assignment.Model;
 using Assignment.Pages;
 
@@ -21,7 +22,7 @@ namespace Assignment.Data
         public FileContext()
         {
             Seed();
-            Families = File.Exists(familiesFile) ? ReadDataFromAdults<Family>(familiesFile) : new List<Family>();
+            Families = File.Exists(familiesFile) ? ReadDataFormFamilies<Family>(familiesFile) : new List<Family>();
             Adults = File.Exists(adultsFile) ? ReadDataFromAdults<Adult>(adultsFile) : new List<Adult>();
         }
 
@@ -33,27 +34,28 @@ namespace Assignment.Data
             Console.WriteLine(Adults[6].Id + "LALALALAL");
         }
 
-        public IList<Family> GetFamilies()
-        {
-            List<Family> tmp = new List<Family>(Families);
-            return tmp;
-        }
+        // public async Task<IList<Family>> GetFamiliesAsync()
+        // {
+            // List<Family> tmp = new List<Family>(Families);
+            // return tmp;
+        // }
 
-        public IList<Adult> GetAdults()
+        public async Task<IList<Adult>> GetAdultsAsync()
         {
             List<Adult> tmp = new List<Adult>(Adults);
             return tmp;
         }
         
-        public void AddAdults(Adult adult)
+        public async Task<Adult> AddAdultsAsync(Adult adult)
         {
             int max = Adults.Max(adult => adult.Id);
             adult.Id = ++max;
             Adults.Add(adult);
             SaveChanges();
+            return adult;
         }
 
-        public void RevomeAdults(int Id)
+        public async Task RevomeAdultsAsync(int Id)
         {
             Adult adultToRemove = Adults.First(a => a.Id == Id);
             Adults.Remove(adultToRemove);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Assignment.Model;
 
 
@@ -6,9 +7,9 @@ namespace Assignment.Data
 {
     public interface IFileContext
     {
-        void AddAdults(Adult adult);
-        IList<Family> GetFamilies();
-        IList<Adult> GetAdults();
-        void RevomeAdults(int Id);
+        Task<Adult> AddAdultsAsync(Adult adult);
+        //Task<IList<Family>> GetFamiliesAsync();
+        Task<IList<Adult>> GetAdultsAsync();
+        Task RevomeAdultsAsync(int Id);
     }
 }
