@@ -6,6 +6,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Assignment.Model;
 using Assignment.Pages;
+using Adult = WebApi.Model.Adult;
 
 namespace WebApi.Data
 {

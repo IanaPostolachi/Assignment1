@@ -98,7 +98,7 @@ using Assignment.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Login.razor"
+#line 34 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Login.razor"
  
     private string username;
     private string password;
@@ -109,7 +109,7 @@ using Assignment.Authentication;
         errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).ValidateLogin(username,password);
+            await ((CustomAuthenticationStateProvider)AuthenticationStateProvider).ValidateLogin(username,password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/");
@@ -127,7 +127,7 @@ using Assignment.Authentication;
         password = "";
         try
         {
-            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).Logout();
+            await ((CustomAuthenticationStateProvider)AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using WebApi.Data.UserMemory;
 
 namespace WebApplication
 {
@@ -27,12 +28,14 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IFileContext, FileContext>();
+            services.AddSingleton<IUserServices, UserServices>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebAPI", Version = "v1"});
             });
-            services.AddSingleton<IFileContext, FileContext>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

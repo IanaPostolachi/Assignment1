@@ -33,7 +33,7 @@ namespace Assignment
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IFileContext, CloudAdultServices>();
-            services.AddScoped<IUserServices, UserServices>();
+            services.AddScoped<IUserServices, UserWebServices>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             
             services.AddAuthorization(options =>

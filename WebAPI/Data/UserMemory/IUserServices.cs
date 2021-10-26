@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Assignment.Model;
+using WebApi.Model;
 
-namespace Assignment.Data.UserMemory
+namespace WebApi.Data.UserMemory
 {
     public interface IUserServices
     {

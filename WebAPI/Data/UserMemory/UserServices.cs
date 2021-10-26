@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Assignment.Model;
+using WebApi.Model;
 
-namespace Assignment.Data.UserMemory
+namespace WebApi.Data.UserMemory
 {
     public class UserServices : IUserServices
     {
-        private List<User> users;
+        private ICollection<User> users;
 
         public UserServices()
         {
@@ -43,17 +43,13 @@ namespace Assignment.Data.UserMemory
 
         public async Task<User> ValidateUser(string userName, string password)
         {
-            User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
-            if (first == null)
+            User first = users.FirstOrDefault(user => user.UserName.Equals(userName) && user.Password.Equals(password));
+            if (first != null)
             {
-                throw new Exception("User not found");
+                Console.WriteLine(first.City);
+                return first;
             }
-
-            if (!first.Password.Equals(password))
-            {
-                throw new Exception("Incorrect password");
-            }
-            return first;
+            throw new Exception("User not found");
         }
     }
 }

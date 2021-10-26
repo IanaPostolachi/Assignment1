@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Data;
-using Assignment.Model;
+using WebApi.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers
