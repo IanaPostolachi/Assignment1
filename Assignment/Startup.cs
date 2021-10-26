@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Assignment.Authentication;
+using Assignment.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +11,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Assignment.Data;
 using Assignment.Data.UserMemory;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -40,6 +40,10 @@ namespace Assignment
             {
                 options.AddPolicy("MustBeAdmin", a =>
                     a.RequireAuthenticatedUser().RequireClaim("Role","Admin"));
+                options.AddPolicy("LogIn", a => 
+                    a.RequireAuthenticatedUser().RequireClaim("City","Horsens"));
+                // options.AddPolicy("LogInAdmin", a => 
+                    // a.RequireAuthenticatedUser().RequireClaim("Role","Admin"));
             });
         }
         

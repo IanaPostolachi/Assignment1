@@ -76,21 +76,6 @@
   },
   {
     "Job": {
-      "JobTitle": "Teacher",
-      "Salary": 91588
-    },
-    "Id": 5,
-    "FirstName": "Soham",
-    "LastName": "Fitzgerald",
-    "HairColor": "Black",
-    "EyeColor": "Grey",
-    "Age": 48,
-    "Weight": 131.6,
-    "Height": 177,
-    "Sex": "M"
-  },
-  {
-    "Job": {
       "JobTitle": "Service Advisor",
       "Salary": 72532
     },
@@ -327,6 +312,36 @@
     "Age": 45,
     "Weight": 60,
     "Height": 165,
+    "Sex": "F"
+  },
+  {
+    "Job": {
+      "JobTitle": "Teacher",
+      "Salary": 12000
+    },
+    "Id": 23,
+    "FirstName": "Poal",
+    "LastName": "Poalson",
+    "HairColor": "blonde",
+    "EyeColor": "blue",
+    "Age": 55,
+    "Weight": 88,
+    "Height": 178,
+    "Sex": "M"
+  },
+  {
+    "Job": {
+      "JobTitle": null,
+      "Salary": 0
+    },
+    "Id": 24,
+    "FirstName": "Ariana",
+    "LastName": "Grande",
+    "HairColor": "Brown",
+    "EyeColor": "Brown",
+    "Age": 27,
+    "Weight": 55,
+    "Height": 166,
     "Sex": "F"
   }
 ]

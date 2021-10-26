@@ -11,7 +11,6 @@ namespace Assignment.Pages
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 1 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\_Imports.razor"
 using System.Net.Http;
@@ -84,42 +83,42 @@ using Assignment.Shared;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
-using Assignment.Model;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
 using Assignment.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+#line 4 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
 using Microsoft.CSharp.RuntimeBinder;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+#line 5 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
 using Microsoft.Extensions.Options;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+#line 6 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
 using System.Net.Security;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
-           [Authorize(Policy = "MustBeAdmin")]
+#line 7 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+using Assignment.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+using Microsoft.AspNetCore.Components;
 
 #line default
 #line hidden
@@ -133,7 +132,7 @@ using System.Net.Security;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
+#line 65 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
  
      //private Adult newAdultItem = new Adult();
      // private Job job = new Job();

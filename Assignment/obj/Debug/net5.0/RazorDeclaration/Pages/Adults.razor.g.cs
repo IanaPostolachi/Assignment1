@@ -83,15 +83,22 @@ using Assignment.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
+#line 3 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
 using Assignment.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
+#line 4 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
 using Assignment.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
+           [Authorize(Policy = "LogIn")]
 
 #line default
 #line hidden
@@ -105,7 +112,7 @@ using Assignment.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
+#line 66 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\Adults.razor"
  
     private IList<Adult> filteredAdults;
     private IList<Adult> adults;

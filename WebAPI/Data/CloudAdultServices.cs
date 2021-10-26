@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Assignment.Model;
 
-namespace Assignment.Data
+namespace WebApi.Data
 {
     public class CloudAdultServices : IFileContext
     {

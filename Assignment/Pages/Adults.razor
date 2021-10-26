@@ -1,4 +1,5 @@
 ﻿@page "/Adults"
+@attribute [Authorize(Policy = "LogIn")]
 @using Assignment.Data
 @using Assignment.Model
 @inject IFileContext FileContext
