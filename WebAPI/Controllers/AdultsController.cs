@@ -44,7 +44,7 @@ namespace WebApplication.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<Adult>> PostTodo([FromBody]Adult adult)
+        public async Task<ActionResult<Adult>> PostAdultAsync([FromBody]Adult adult)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace WebApplication.Controllers
         
         [HttpDelete]
         [Route("{Id:int}")]
-        public async Task<ActionResult> RemoveTodo([FromRoute] int Id)
+        public async Task<ActionResult> RemoveAdultAsync([FromRoute] int Id)
         {
             try
             {
