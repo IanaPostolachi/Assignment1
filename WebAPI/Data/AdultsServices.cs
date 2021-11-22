@@ -10,7 +10,7 @@ using Adult = WebApi.Model.Adult;
 
 namespace WebApi.Data
 {
-    public class FileContext : IFileContext
+    public class AdultsServices : IAdultsServices
     {
         public IList<Family> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
@@ -20,7 +20,7 @@ namespace WebApi.Data
         private readonly string adultsFile =
             "C:/Users/Iana Postolachi/RiderProjects/Assignment1/Assignment/adults.json";
 
-        public FileContext()
+        public AdultsServices()
         {
             Seed();
             Families = File.Exists(familiesFile) ? ReadDataFormFamilies<Family>(familiesFile) : new List<Family>();
@@ -56,7 +56,7 @@ namespace WebApi.Data
             return adult;
         }
 
-        public async Task RevomeAdultsAsync(int Id)
+        public async Task RemoveAdultsAsync(int Id)
         {
             Adult adultToRemove = Adults.First(a => a.Id == Id);
             Adults.Remove(adultToRemove);

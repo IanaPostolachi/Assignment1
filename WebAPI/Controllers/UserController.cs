@@ -31,5 +31,24 @@ namespace WebApi.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPost]
+        public async Task<ActionResult<User>> AddUser([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                User addedUser = await UserServices.AddUserAsync(user);
+                return Created($"/{addedUser.UserName}", addedUser);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }

@@ -316,21 +316,6 @@
   },
   {
     "Job": {
-      "JobTitle": "Teacher",
-      "Salary": 12000
-    },
-    "Id": 23,
-    "FirstName": "Poal",
-    "LastName": "Poalson",
-    "HairColor": "blonde",
-    "EyeColor": "blue",
-    "Age": 55,
-    "Weight": 88,
-    "Height": 178,
-    "Sex": "M"
-  },
-  {
-    "Job": {
       "JobTitle": null,
       "Salary": 0
     },
@@ -340,21 +325,6 @@
     "HairColor": "Brown",
     "EyeColor": "Brown",
     "Age": 27,
-    "Weight": 55,
-    "Height": 166,
-    "Sex": "F"
-  },
-  {
-    "Job": {
-      "JobTitle": null,
-      "Salary": 0
-    },
-    "Id": 25,
-    "FirstName": "Laura",
-    "LastName": "Popa",
-    "HairColor": "Brown",
-    "EyeColor": "Brown",
-    "Age": 44,
     "Weight": 55,
     "Height": 166,
     "Sex": "F"

@@ -1,15 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebApi.Model
 {
     public class User
     {
+        [Key]
+        [Required]
         public string UserName
         {
             set;
             get;
         }
 
+        [Required]
         public string Password
         {
             set;

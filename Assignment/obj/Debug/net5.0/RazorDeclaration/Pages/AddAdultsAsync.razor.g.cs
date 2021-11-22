@@ -134,23 +134,23 @@ using Microsoft.AspNetCore.Components;
 #nullable restore
 #line 65 "C:\Users\Iana Postolachi\RiderProjects\Assignment1\Assignment\Pages\AddAdultsAsync.razor"
  
-     //private Adult newAdultItem = new Adult();
-     // private Job job = new Job();
+    //private Adult newAdultItem = new Adult();
+    // private Job job = new Job();
+    //private Job Job = new Job();
 
-     private Adult newAdultItem = new Adult
-     {
-         Job = new Job()
-     }; 
-    
+    private Adult newAdultItem = new()
+    {
+        Job = new Job()
+    };
+
     private void AddAdult()
     {
-        // Adult adult = (Adult)newAdultItem;
-        // adult.Job = job;
-        
+    // Adult adult = (Adult)newAdultItem;
+    // adult.Job = job;
         FileContext.AddAdultsAsync(newAdultItem);
         NavigationManager.NavigateTo("/Adults");
     }
-    
+
     private void AddSex(ChangeEventArgs arg)
     {
         newAdultItem.Sex = arg.Value.ToString();

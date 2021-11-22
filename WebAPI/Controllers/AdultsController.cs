@@ -12,11 +12,11 @@ namespace WebApplication.Controllers
     [Route("[controller]")]
     public class AdultsController : ControllerBase
     {
-        private readonly IFileContext FileContext;
+        private readonly IAdultsServices AdultsServices;
 
-        public AdultsController(IFileContext fileContext)
+        public AdultsController(IAdultsServices adultsServices)
         {
-            this.FileContext = fileContext;
+            AdultsServices = adultsServices;
         }
         
         [HttpGet]
@@ -24,7 +24,7 @@ namespace WebApplication.Controllers
         {
             try
             {
-                IList<Adult> adults = await FileContext.GetAdultsAsync();
+                IList<Adult> adults = await AdultsServices.GetAdultsAsync();
                 if (Id != null)
                 { 
                     adults = adults.Where(adult => adult.Id == Id).ToList();
@@ -52,7 +52,7 @@ namespace WebApplication.Controllers
             }
             try
             {
-                Adult addedAdult = await FileContext.AddAdultsAsync(adult);
+                Adult addedAdult = await AdultsServices.AddAdultsAsync(adult);
                 return Created($"/{addedAdult.Id}", addedAdult);
             }
             catch (Exception e)
@@ -68,7 +68,7 @@ namespace WebApplication.Controllers
         {
             try
             {
-                await FileContext.RevomeAdultsAsync(Id);
+                await AdultsServices.RemoveAdultsAsync(Id);
                 return Ok();
             }
             catch (Exception e)

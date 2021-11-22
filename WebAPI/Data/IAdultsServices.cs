@@ -5,11 +5,11 @@ using WebApi.Model;
 
 namespace WebApi.Data
 {
-    public interface IFileContext
+    public interface IAdultsServices
     {
         Task<Adult> AddAdultsAsync(Adult adult);
         //Task<IList<Family>> GetFamiliesAsync();
         Task<IList<Adult>> GetAdultsAsync();
-        Task RevomeAdultsAsync(int Id);
+        Task RemoveAdultsAsync(int Id);
     }
 }

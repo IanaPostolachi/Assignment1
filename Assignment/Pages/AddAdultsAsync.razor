@@ -34,14 +34,14 @@
         Itroduce your age: <br/>
         <input type="number" rows="1" @bind="newAdultItem.Age" style="width: 70px"/>
     </div>
-    @* <div class="form-group"> *@
-        @* Introduce your place of work: <br/> *@
-        @* <InputText rows="1" @bind-value="newAdultItem.Job.JobTitle"/> *@
-    @* </div> *@
-    @* <div class="form-group"> *@
-            @* Introduce your Salary: <br/> *@
-            @* <input type="number" rows="1" @bind="newAdultItem.Job.Salary"/> *@
-        @* </div> *@
+    <div class="form-group">
+        Introduce your place of work: <br/>
+        <InputText rows="1" @bind-Value="newAdultItem.Job.JobTitle"/>
+    </div>
+    <div class="form-group">
+        Introduce your Salary: <br/>
+        <input type="number" @bind="newAdultItem.Job.Salary"/>
+    </div>
     <div class="form-group">
         Intoduce the color of your hair: <br/>
         <InputText rows="1" @bind-Value="newAdultItem.HairColor"/>
@@ -51,9 +51,9 @@
         <InputText rows="1" @bind-Value="newAdultItem.EyeColor"/>
     </div>
     <div class="form-group">
-        Introduce your weight: 
+        Introduce your weight:
         <input type="number" @bind="newAdultItem.Weight" style="width: 70px"/>
-        and height: 
+        and height:
         <input type="number" @bind="newAdultItem.Height" style="width: 70px"/>
     </div>
     <p class="actions">
@@ -63,23 +63,23 @@
 
 @code
 {
-     //private Adult newAdultItem = new Adult();
-     // private Job job = new Job();
+    //private Adult newAdultItem = new Adult();
+    // private Job job = new Job();
+    //private Job Job = new Job();
 
-     private Adult newAdultItem = new Adult
-     {
-         Job = new Job()
-     }; 
-    
+    private Adult newAdultItem = new()
+    {
+        Job = new Job()
+    };
+
     private void AddAdult()
     {
-        // Adult adult = (Adult)newAdultItem;
-        // adult.Job = job;
-        
+    // Adult adult = (Adult)newAdultItem;
+    // adult.Job = job;
         FileContext.AddAdultsAsync(newAdultItem);
         NavigationManager.NavigateTo("/Adults");
     }
-    
+
     private void AddSex(ChangeEventArgs arg)
     {
         newAdultItem.Sex = arg.Value.ToString();

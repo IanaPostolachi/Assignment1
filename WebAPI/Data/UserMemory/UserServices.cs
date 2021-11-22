@@ -51,5 +51,10 @@ namespace WebApi.Data.UserMemory
             }
             throw new Exception("User not found");
         }
+
+        public Task<User> AddUserAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

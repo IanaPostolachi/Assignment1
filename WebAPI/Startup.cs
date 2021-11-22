@@ -12,7 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using WebApi.Data.DBAdults;
 using WebApi.Data.UserMemory;
+using WebApi.Persistence;
 
 namespace WebApplication
 {
@@ -28,8 +30,9 @@ namespace WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IFileContext, FileContext>();
-            services.AddSingleton<IUserServices, UserServices>();
+            services.AddScoped<IAdultsServices, AdultDBServices>();
+            services.AddScoped<IUserServices, UserDBServices>();
+            services.AddDbContext<AdultDBContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
